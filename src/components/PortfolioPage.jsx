@@ -20,8 +20,8 @@ const PortfolioPage = () => {
       style={{
         scaleX:scrollYProgress
       }} className={`w-full  ${
-          isDark ? "bg-purple-50" : "bg-[#99d4fc]"
-        } h-23 z-13 fixed top-0 left-[40] origin-left`}>     </motion.div>
+          isDark ? "bg-blue-400" : "bg-blue-400"
+        } h-23 z-13 fixed top-0 left-[0] origin-left`}>     </motion.div>
        
         <Navbar />
         <main className="pt-24">      <Home />

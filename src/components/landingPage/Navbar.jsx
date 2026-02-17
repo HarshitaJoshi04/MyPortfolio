@@ -37,7 +37,7 @@ const Navbar = ({ open, onClose }) => {
         </div>
       </nav>
       <div
-        className={`fixed top-0 h-screen pt-19 gap-3 text-black flex flex-col right-0   w-40 ${
+        className={`fixed top-0  pt-19 gap-3 text-black flex flex-col right-0   w-40 ${
           isDark ? "bg-[#dce9ee]" : "bg-[#99d4fc]"
         } z-50
    transform transition-transform duration-300
