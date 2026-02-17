@@ -1,0 +1,105 @@
+@import "tailwindcss";
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.blocks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* not vh */
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* NOT flex */
+  pointer-events: none;
+  z-index:11;
+}
+
+.row {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  flex: 1;
+  background: #eeeaea;
+  
+  margin: -0.25px;
+}
+
+.transition-in .block {
+  transform-origin: top;
+}
+
+.transition-out .block {
+  transform-origin: bottom;
+}
+
+
+.Light {
+
+background-color:#b9d9ef;
+
+  color: rgb(0, 0, 0);
+  
+  
+ 
+  
+}
+.Light input {
+  background-color: #c5dbf1;
+  
+}
+
+
+
+.Light textarea {
+  background-color:#c5dbf1;
+  
+  
+}
+
+.Dark{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.theme-button {
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+
+/* Default state */
+.swiper-slide .swiper-card {
+  transform: scale(0.85);
+  opacity: 0.6;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Active (center) card */
+.swiper-slide-active .swiper-card,
+.swiper-slide-duplicate-active .swiper-card {
+  transform: scale(1.05);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Move arrows to bottom */
+.swiper-button-prev,
+.swiper-button-next {
+  top: 100%;
+  bottom: auto ;
+  transform: translateY(10px) ;
+}
+
+/* Center them */
+.swiper-button-prev {
+  left: calc(50% - 60px);
+}
+
+.swiper-button-next {
+  left: calc(50% + 20px) ;
+}
