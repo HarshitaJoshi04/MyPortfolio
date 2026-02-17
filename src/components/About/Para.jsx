@@ -2,7 +2,7 @@ import React from "react";
 
 const Para = ({ isDark = true }) => {
   return (
-    <div className={`${isDark ? "text-gray-700" : "text-gray-700"} text-[19px] lg:text-xl    leading-relaxed `}>
+    <div className={`${isDark ? "text-gray-700" : "text-gray-700"} text-[14px] lg:text-[18px]   leading-tight sm:text-sm`}>
       <p>
         I’m a frontend developer who enjoys turning ideas into clean,
         interactive web experiences. I focus on building responsive,
