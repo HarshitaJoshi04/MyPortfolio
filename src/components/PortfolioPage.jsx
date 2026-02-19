@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Navbar from "./landingPage/Navbar";
-import Transition from "../components/landingPage/Transition";
+
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Projects from "../pages/Projects";
@@ -35,4 +35,4 @@ const PortfolioPage = () => {
   );
 };
 
-export default Transition(PortfolioPage);
+export default PortfolioPage;

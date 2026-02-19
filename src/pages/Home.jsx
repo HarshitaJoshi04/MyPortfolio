@@ -34,7 +34,7 @@ const Home = () => {
               <H1
                 text="Creative Frontend Engineer"
                 duration={0.6}
-                delay={2.2}
+                delay={1.2}
                 isDark={isDark}
                 stagger={0.2}
               />

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const HeroText = ({ duration = 1, delay = 1, stagger = 0.25 }) => {
+const HeroText = ({ duration = 0.5, delay = 0.3, stagger = 0.25 }) => {
   const textRef = useRef(null);
 
   useEffect(() => {

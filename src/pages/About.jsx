@@ -12,7 +12,7 @@ const About = () => {
       {/* Content */}
       <section
         id="about"
-        className="relative z-10 flex items-center justify-center h-full w-full text-white text-4xl font-bold"
+        className="font-lilita relative z-10 flex items-center justify-center h-full w-full text-white text-4xl font-bold"
       >
         <div
           className={`w-[90%] max-w-7xl flex backdrop-blur-md flex-col p-5 lg:flex-row rounded items-center justify-between gap-13 border ${
