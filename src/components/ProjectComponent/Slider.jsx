@@ -3,24 +3,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-
+import blogImg from "../../assets/blogapp.png"
 import "swiper/css";
 import "swiper/css/navigation";
 import H1 from "../headingAnimation/H1";
 
 
-const projects = [
+  const projects = [
   {
-    title: "Student Counseling System",
-    image:
-      "https://img.freepik.com/free-photo/lavender-field-sunset-near-valensole_268835-3910.jpg?semt=ais_user_personalization&w=740&q=80",
-    github: "#",
-    live: "#",
+    title: "BlogApp",
+    image: blogImg,
+    description:
+      "Full-stack blogging platform built with React, Redux Toolkit, Appwrite, and Multer. Includes authentication, post management, and media uploads.",
+    github: "https://github.com/HarshitaJoshi04/BlogApp",
+    live: "https://blog-app-git-main-harshitajoshi04s-projects.vercel.app",
   },
   {
     title: "Portfolio Website",
     image:
       "https://www.shutterstock.com/image-photo/sun-sets-behind-mountain-ranges-600nw-2479236003.jpg",
+    description:
+      "Personal portfolio built using React and Tailwind CSS showcasing projects, animations, and responsive UI design.",
     github: "#",
     live: "#",
   },
@@ -28,6 +31,8 @@ const projects = [
     title: "E-Commerce App",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YYh5Fk1u9VsWWr1MhkyQeOzeNbtnnMO96g&s",
+    description:
+      "Modern e-commerce platform with product listing, cart management, authentication, and order flow.",
     github: "#",
     live: "#",
   },
@@ -35,6 +40,8 @@ const projects = [
     title: "AI Chatbot",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVCzmpVvfm0M1dQ0304Ak70NcSH1byDvKclw&s",
+    description:
+      "AI-powered chatbot application with conversational UI and intelligent response handling.",
     github: "#",
     live: "#",
   },
@@ -90,11 +97,15 @@ export default function Slider() {
                   />
                 </div>
 
-                <div className="p-5 ">
-                  <h3 className="text-base md:text-lg font-semibold text-zinc-900">
-                    {project.title}
-                  </h3>
-                </div>
+        <div className="p-5 space-y-2">
+  <h3 className="text-base md:text-lg font-semibold text-zinc-900">
+    {project.title}
+  </h3>
+
+  <p className="text-sm text-zinc-600 leading-relaxed">
+    {project.description}
+  </p>
+</div>
 
                 <div className="flex justify-center gap-6 p-5 ">
                   <a
