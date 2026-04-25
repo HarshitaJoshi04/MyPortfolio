@@ -4,6 +4,8 @@ import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import blogImg from "../../assets/blogapp.png"
+import creator from "../../assets/creator.png"
+import portfolio from "../../assets/portfolio.png"
 import "swiper/css";
 import "swiper/css/navigation";
 import H1 from "../headingAnimation/H1";
@@ -20,30 +22,20 @@ import H1 from "../headingAnimation/H1";
   },
   {
     title: "Portfolio Website",
-    image:
-      "https://www.shutterstock.com/image-photo/sun-sets-behind-mountain-ranges-600nw-2479236003.jpg",
+    image:portfolio,
     description:
       "Personal portfolio built using React and Tailwind CSS showcasing projects, animations, and responsive UI design.",
     github: "#",
     live: "#",
   },
   {
-    title: "E-Commerce App",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YYh5Fk1u9VsWWr1MhkyQeOzeNbtnnMO96g&s",
+    title: "Creators Platform",
+    image:creator,
+      
     description:
-      "Modern e-commerce platform with product listing, cart management, authentication, and order flow.",
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "AI Chatbot",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVCzmpVvfm0M1dQ0304Ak70NcSH1byDvKclw&s",
-    description:
-      "AI-powered chatbot application with conversational UI and intelligent response handling.",
-    github: "#",
-    live: "#",
+      "Built a full stack creator platform with user authentication, content publishing, and creator dashboard management.",
+    github: "https://github.com/HarshitaJoshi04/creator-platform",
+    live: "https://creator-platform-peach.vercel.app/",
   },
 ];
 
