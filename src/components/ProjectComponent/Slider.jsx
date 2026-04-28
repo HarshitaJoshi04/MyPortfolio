@@ -12,14 +12,7 @@ import H1 from "../headingAnimation/H1";
 
 
   const projects = [
-  {
-    title: "BlogApp",
-    image: blogImg,
-    description:
-      "Full-stack blogging platform built with React, Redux Toolkit, Appwrite, and Multer. Includes authentication, post management, and media uploads.",
-    github: "https://github.com/HarshitaJoshi04/BlogApp",
-    live: "https://blog-app-git-main-harshitajoshi04s-projects.vercel.app",
-  },
+  
   {
     title: "Portfolio Website",
     image:portfolio,
