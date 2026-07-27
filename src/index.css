@@ -47,37 +47,33 @@ h1,h2,h3,h4,h5,h6{
 
 
 .Light {
-
-background-color:#b9d9ef;
-
-  color: rgb(0, 0, 0);
-  
-  
- 
-  
-}
-.Light input {
-  background-color: #c5dbf1;
-  
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 50%, #bcccdc 100%);
+  color: #102a43;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-
-
-.Light textarea {
-  background-color:#c5dbf1;
-  
-  
+.Light input, .Light textarea {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #102a43;
+  border-color: #bcccdc;
 }
 
-.Dark{
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+.Dark {
+  background: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%);
+  color: #f8fafc;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.Dark input, .Dark textarea {
+  background-color: rgba(17, 24, 39, 0.7);
+  color: #f8fafc;
+  border-color: #374151;
 }
 
 .theme-button {
   padding: 8px 20px;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 

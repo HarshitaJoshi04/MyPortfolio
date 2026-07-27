@@ -18,7 +18,7 @@ const H1 = ({
       gsap.fromTo(
         h1ref.current.children,
         {
-          y: 80,
+          y: 40,
           opacity: 0,
         },
         {
@@ -30,24 +30,21 @@ const H1 = ({
           ease: "power3.out",
           scrollTrigger: {
             trigger: h1ref.current,
-            start: "-1500%",
+            start: "top 85%",
             toggleActions: "play none none none",
-            
-        
-            end:"-555"
           },
         }
       );
     }, h1ref);
 
     return () => ctx.revert();
-  }, []);
+  }, [delay, duration, stagger]);
 
   return (
     <h1
       ref={h1ref}
-      className={`text-xl sm:text-2xl font-bold md:text-3xl ${
-        isDark ? "text-gray-500" : "text-gray-500"
+      className={`text-xl sm:text-2xl font-bold md:text-3xl tracking-tight transition-colors duration-300 ${
+        isDark ? "text-slate-400" : "text-slate-500"
       }`}
     >
       {text.split(" ").map((word, i) => (

@@ -17,11 +17,11 @@ const PortfolioPage = () => {
     <div>
            <CustomCurser />
       <motion.div
-      style={{
-        scaleX:scrollYProgress
-      }} className={`w-full  ${
-          isDark ? "bg-blue-400" : "bg-blue-400"
-        } h-23 z-13 fixed top-0 left-[0] origin-left`}>     </motion.div>
+        style={{
+          scaleX: scrollYProgress
+        }}
+        className="w-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 h-1 z-50 fixed top-0 left-0 origin-left"
+      />
        
         <Navbar />
         <main className="pt-24">      <Home />

@@ -23,7 +23,7 @@ const CustomCurser = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"
+      className="hidden md:block fixed top-0 left-0 w-4 h-4 bg-white border border-white rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
     />
   );
 }

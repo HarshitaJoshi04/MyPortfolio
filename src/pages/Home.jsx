@@ -11,23 +11,20 @@ const Home = () => {
   const isDark = theme === "Dark";
 
   return (
-    <div className={`relative w-full min-h-screen
-`}>
+    <div className="relative w-full min-h-screen flex items-center justify-center py-12 md:py-24">
       <section
         id="home"
-        className={`relative z-10 lg:top-[10%] md:top-[20%] sm:top=[12%]  flex items-center justify-center h-full w-full font-bold ${
-          isDark ? "text-gray-800" : "text-gray-900"
-        }`}
+        className="relative z-10 flex items-center justify-center w-full px-4"
       >
         <div
-          className={`w-[90%] max-w-7xl flex backdrop-blur-md flex-col p-5 lg:flex-row rounded items-center justify-between gap-10 border ${
+          className={`w-full max-w-5xl flex flex-col lg:flex-row items-center justify-between gap-10 p-8 md:p-12 rounded-3xl border transition-all duration-500 ${
             isDark
-              ? "bg-white border-white/7"
-              : "bg-white border-gray-200 shadow-2xl"
-          }`}
+              ? "bg-slate-900/60 border-slate-800/80 text-white shadow-2xl shadow-black/20"
+              : "bg-white/80 border-slate-200/80 text-slate-800 shadow-xl shadow-slate-200/50"
+          } backdrop-blur-md`}
         >
           {/* LEFT SIDE */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left  lg:px-7 gap-7">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
             <div className="flex flex-col gap-3">
               <HeroText />
 
@@ -45,22 +42,22 @@ const Home = () => {
 
           {/* RIGHT SIDE */}
           <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] flex items-center justify-center">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] flex items-center justify-center">
               <Orb
                 hoverIntensity={0}
                 rotateOnHover
                 hue={3}
                 forceHoverState={false}
-                backgroundColor={isDark ? "#ffffff" : "#ffffff"}
-                baseColor1={isDark ? "#2563eb" : "#2563eb"}
+                backgroundColor={isDark ? "#0b0f19" : "#f0f4f8"}
+                baseColor1={isDark ? "#3b82f6" : "#2563eb"}
                 baseColor2={isDark ? "#60a5fa" : "#60a5fa"}
-                baseColor3={isDark ? "#1e40af" : "#1e40af"}
+                baseColor3={isDark ? "#1d4ed8" : "#1e40af"}
               />
 
               <img
                 src={profileImg}
                 alt="Harshita"
-                className="absolute w-44 h-44 lg:w-81 lg:h-81 md:w-64 md:h-64 rounded-full  object-cover "
+                className="absolute w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white/20 shadow-lg"
               />
             </div>
           </div>
