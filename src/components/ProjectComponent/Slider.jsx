@@ -13,20 +13,28 @@ import { Theme } from "../themecontext/ThemeContext";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    image: portfolio,
-    description:
-      "Personal portfolio built using React and Tailwind CSS showcasing projects, animations, and responsive UI design.",
-    github: "#",
-    live: "#",
-  },
-  {
     title: "Creators Platform",
     image: creator,
     description:
-      "Built a full stack creator platform with user authentication, content publishing, and creator dashboard management.",
+      "A full-stack publishing platform for creators built with React, Node.js, and Express. Features secure user authentication, interactive dashboards, and live content publishing pipelines.",
     github: "https://github.com/HarshitaJoshi04/creator-platform",
     live: "https://creator-platform-peach.vercel.app/",
+  },
+  {
+    title: "Blog Application",
+    image: blogImg,
+    description:
+      "A responsive blogging platform developed using React and Tailwind CSS. Implements dynamic markdown parsing, category filters, and stateful search to provide high performance reading experiences.",
+    github: "https://github.com/HarshitaJoshi04/blog-app",
+    live: "#",
+  },
+  {
+    title: "Portfolio Website",
+    image: portfolio,
+    description:
+      "A portfolio showcasing frontend engineering projects. Built with React 19, Tailwind CSS v4, and GSAP ScrollTrigger to achieve smooth layouts and high-fidelity scroll animations.",
+    github: "https://github.com/HarshitaJoshi04/portfolio",
+    live: "https://harshitajoshi.vercel.app/",
   },
 ];
 
@@ -65,7 +73,7 @@ export default function Slider() {
             swiperRef.current = swiper;
           }}
           centeredSlides
-          loop={projects.length > 3}
+          loop={projects.length > 2}
           spaceBetween={24}
           className="w-[85%]"
           breakpoints={{

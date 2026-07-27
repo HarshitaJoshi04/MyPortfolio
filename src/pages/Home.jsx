@@ -37,7 +37,23 @@ const Home = () => {
               />
             </div>
 
-            <Icons />
+            <div className="flex flex-col sm:flex-row items-center gap-6 mt-2">
+              <Icons />
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("Opening Resume... (Replace the href in Home.jsx with your actual PDF link!)");
+                }}
+                className={`px-6 py-2 text-sm font-semibold rounded-full border transition-all duration-300 shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer ${
+                  isDark
+                    ? "bg-blue-600 border-blue-600 hover:bg-blue-700 text-white shadow-blue-600/20"
+                    : "bg-indigo-600 border-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-600/20"
+                }`}
+              >
+                View Resume
+              </a>
+            </div>
           </div>
 
           {/* RIGHT SIDE */}
