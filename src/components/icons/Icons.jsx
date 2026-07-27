@@ -19,7 +19,7 @@ const Icons = () => {
               href="https://github.com/HarshitaJoshi04"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-700 transition duration-300 hover:scale-110 transform"
+              className="hover:text-blue-500 transition-all duration-300 hover:scale-115 active:scale-95 transform cursor-pointer"
             >
               <FaGithub />
             </a>
@@ -28,14 +28,14 @@ const Icons = () => {
               href="https://www.linkedin.com/in/harshita-joshi-a76040383/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-700 transition duration-300 hover:scale-110 transform"
+              className="hover:text-blue-500 transition-all duration-300 hover:scale-115 active:scale-95 transform cursor-pointer"
             >
               <FaLinkedin />
             </a>
 
             <button
               onClick={() => scrollTo("contact")}
-              className="hover:text-gray-700 transition duration-300 hover:scale-110 transform"
+              className="hover:text-blue-500 transition-all duration-300 hover:scale-115 active:scale-95 transform cursor-pointer"
             >
               <FaEnvelope />
             </button>

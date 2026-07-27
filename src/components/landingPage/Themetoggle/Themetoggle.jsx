@@ -1,12 +1,12 @@
 import React, { useContext, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Theme } from "../../themecontext/ThemeContext";
-
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Themetoggle = () => {
   const btnRef = useRef(null);
   const [theme, setTheme] = useContext(Theme);
+  const isDark = theme === "Dark";
 
   useEffect(() => {
     gsap.fromTo(
@@ -21,14 +21,18 @@ const Themetoggle = () => {
   };
 
   return (
-    <div
+    <button
       ref={btnRef}
-      className="shadow-lg hover:shadow-gray-500/50 px-5 py-1 rounded flex items-center justify-center"
+      onClick={handleClick}
+      className={`p-2.5 rounded-xl border transition-all duration-300 shadow-sm hover:shadow active:scale-95 cursor-pointer flex items-center justify-center ${
+        isDark
+          ? "bg-slate-900/80 border-slate-800 text-yellow-400 hover:bg-slate-800"
+          : "bg-white/80 border-slate-200 text-indigo-600 hover:bg-slate-50"
+      }`}
+      aria-label="Toggle theme"
     >
-      <button onClick={handleClick}>
-        {theme === "Dark" ? <FaMoon /> : <FaSun />}
-      </button>
-    </div>
+      {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
+    </button>
   );
 };
 

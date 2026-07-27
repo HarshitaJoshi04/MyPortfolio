@@ -35,13 +35,14 @@ const Button = () => {
       px-8 py-3
       rounded-full
       text-lg font-semibold
-      bg-gradient-to-r from-blue-500 to-blue-500
+      bg-gradient-to-r from-blue-500 to-indigo-600
       text-white
       shadow-lg
       transition-all duration-300
-      hover:shadow-[0_0_30px_rgba(0,92,456,0.9)]
+      hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]
       hover:scale-105
-      active:scale-95"
+      active:scale-95
+      cursor-pointer"
     >
       Explore
     </button>

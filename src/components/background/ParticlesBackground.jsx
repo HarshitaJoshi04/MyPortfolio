@@ -1,15 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
+import { Theme } from "../themecontext/ThemeContext";
 
 const ParticlesBackground = () => {
   const canvasRef = useRef(null);
+  const [theme] = useContext(Theme);
+  const isDark = theme === "Dark";
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
     let particles = [];
-    const particlesCount = 100;
-    const colors = ["rgba(255,255,255,0.7)"];
+    const particlesCount = 80;
+    const colors = isDark 
+      ? ["rgba(255,255,255,0.45)", "rgba(96,165,250,0.35)", "rgba(139,92,246,0.35)"]
+      : ["rgba(37,99,235,0.25)", "rgba(79,70,229,0.25)", "rgba(147,51,234,0.25)"];
 
     let width, height;
 
@@ -76,7 +81,7 @@ const ParticlesBackground = () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <canvas
