@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 export const Theme=createContext()
 
 const ThemeContext = (props) => {
-  const [theme, setTheme] = useState("Light")
+  const [theme, setTheme] = useState("Dark")
 
   return (
     <div><Theme.Provider value={[theme,setTheme]}>

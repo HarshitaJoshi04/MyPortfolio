@@ -3,16 +3,20 @@ import { Theme } from "../themecontext/ThemeContext";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
-    skills: ["React.js", "JavaScript (ES6+)", "HTML5 / CSS3", "Tailwind CSS"],
+    title: "Frontend",
+    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
-    title: "Libraries & Animation",
-    skills: ["GSAP", "Framer Motion", "Swiper.js", "WebGL / OGL"],
+    title: "Backend",
+    skills: ["Node.js", "Express.js", "REST APIs", "JWT"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git & GitHub", "npm / Vite", "Vercel / Netlify", "VS Code"],
+    title: "Database",
+    skills: ["MongoDB", "Mongoose", "Cloudinary"],
+  },
+  {
+    title: "Tools & AI",
+    skills: ["Git", "GitHub", "OpenAI API", "Vercel"],
   },
 ];
 

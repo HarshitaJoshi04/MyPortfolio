@@ -30,8 +30,8 @@ const HeroText = ({ duration = 0.5, delay = 0.3, stagger = 0.25 }) => {
       <span className="inline-block mr-2">I’m</span>
       <span className={`inline-block bg-gradient-to-r bg-clip-text text-transparent pb-1 ${
         isDark 
-          ? "from-blue-400 via-indigo-400 to-purple-400" 
-          : "from-blue-600 via-indigo-600 to-purple-600"
+          ? "from-blue-400 via-indigo-400 to-blue-400" 
+          : "from-yellow-500 via-yellow-600 to-yellow-500"
       }`}>
         Harshita
       </span>

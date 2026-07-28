@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import NavLinks from "../navbarComponents/NavLinks";
 import Themetoggle from "./Themetoggle/Themetoggle";
 import { Theme } from "../themecontext/ThemeContext";
@@ -9,7 +9,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Navbar = ({ open, onClose }) => {
+const Navbar = ({ open, onClose,transparent = false }) => {
   const scrollTo = (id) => {
     gsap.to(window, {
       scrollTo: `#${id}`,
@@ -17,23 +17,37 @@ const Navbar = ({ open, onClose }) => {
       ease: "power3.inOut",
     });
   };
-  
+
   const [isOpen, setIsOpen] = useState(false);
   const [theme] = useContext(Theme);
   const isDark = theme === "Dark";
+
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > window.innerHeight - 100);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 px-6 md:px-12 transition-all duration-300 ${
-          isDark
-            ? "bg-slate-950/70 text-slate-100 border-b border-slate-900/50 backdrop-blur-md"
-            : "bg-white/70 text-slate-800 border-b border-slate-100 backdrop-blur-md"
-        } shadow-sm`}
-      >
-        <Themetoggle />
-        <div className="hidden md:block">
+     <nav
+  className={`fixed top-5 right-5 w-auto flex gap-4 rounded-2xl px-4 py-3 z-50 ${
+    isDark
+      ? "bg-slate-950/70 backdrop-blur-xl border border-white/10"
+      : "bg-white/80 backdrop-blur-xl border border-slate-200"
+  }`}
+>
+          <div className="hidden md:block">
           <NavLinks />
         </div>
+
+        <Themetoggle />
+
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setIsOpen(true)}

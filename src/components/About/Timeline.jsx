@@ -3,16 +3,22 @@ import { Theme } from "../themecontext/ThemeContext";
 
 const timelineData = [
   {
-    role: "Computer Science & Engineering Student",
-    company: "University / Institute",
-    duration: "2023 - Present",
-    desc: "Focusing on frontend technologies, data structures, and algorithm design. Maintaining a strong academic performance.",
+    role: "Bachelor of Technology",
+    company: "Computer Science & Engineering",
+    duration: "2023 – 2027",
+    desc: "Pursuing a Bachelor's degree in Computer Science while building a strong foundation in software development, data structures, algorithms, databases, and computer networks.",
   },
   {
-    role: "Frontend Developer Trainee / Freelance",
-    company: "Self-Employed / Personal Projects",
-    duration: "2024 - Present",
-    desc: "Built multiple interactive web applications with React, Tailwind CSS, and GSAP. Specialized in responsive UI design and animation dynamics.",
+    role: "Full Stack MERN Development",
+    company: "Self Learning & Projects",
+    duration: "2024 – Present",
+    desc: "Developing scalable full-stack web applications using React, Next.js, Node.js, Express, and MongoDB with a focus on responsive UI, authentication, REST APIs, and clean architecture.",
+  },
+  {
+    role: "AI & Automation",
+    company: "Personal Projects",
+    duration: "2025 – Present",
+    desc: "Building AI-powered applications by integrating Large Language Models, automation workflows, and modern APIs to create intelligent, real-world web solutions.",
   },
 ];
 

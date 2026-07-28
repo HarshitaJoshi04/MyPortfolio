@@ -11,10 +11,10 @@ const ParticlesBackground = () => {
     const ctx = canvas.getContext("2d");
 
     let particles = [];
-    const particlesCount = 80;
+    const particlesCount = 100;
     const colors = isDark 
-      ? ["rgba(255,255,255,0.45)", "rgba(96,165,250,0.35)", "rgba(139,92,246,0.35)"]
-      : ["rgba(37,99,235,0.25)", "rgba(79,70,229,0.25)", "rgba(147,51,234,0.25)"];
+      ? ["hsl(198, 65%, 70%)", "rgb(183, 195, 210)", "rgb(181, 165, 220)"]
+      : ["rgba(31, 146, 212, 0.78)", "rgba(18, 146, 225, 0.75)", "rgba(43, 147, 211, 0.76)"];
 
     let width, height;
 

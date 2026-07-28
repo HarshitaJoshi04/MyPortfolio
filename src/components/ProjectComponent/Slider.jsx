@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import blogImg from "../../assets/blogapp.png";
-import creator from "../../assets/creator.png";
+import studyAi from "../../assets/studyai.png";
 import portfolio from "../../assets/portfolio.png";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,29 +13,49 @@ import { Theme } from "../themecontext/ThemeContext";
 
 const projects = [
   {
-    title: "Creators Platform",
-    image: creator,
-    description:
-      "A full-stack publishing platform for creators built with React, Node.js, and Express. Features secure user authentication, interactive dashboards, and live content publishing pipelines.",
-    github: "https://github.com/HarshitaJoshi04/creator-platform",
-    live: "https://creator-platform-peach.vercel.app/",
+    title: "StudyAI",
+    image: studyAi,
+  description:
+    "AI-powered MERN platform that converts YouTube videos into structured notes through automated AI workflows.",
+  tech: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "OpenAI",
+    "Make.com",
+    "Cloudinary"
+  ],
+    github: "https://github.com/HarshitaJoshi04/study-AI",
+    live: "https://study-ai-two-rust.vercel.app/",
   },
-  {
-    title: "Blog Application",
-    image: blogImg,
-    description:
-      "A responsive blogging platform developed using React and Tailwind CSS. Implements dynamic markdown parsing, category filters, and stateful search to provide high performance reading experiences.",
-    github: "https://github.com/HarshitaJoshi04/blog-app",
-    live: "#",
-  },
+
   {
     title: "Portfolio Website",
     image: portfolio,
     description:
-      "A portfolio showcasing frontend engineering projects. Built with React 19, Tailwind CSS v4, and GSAP ScrollTrigger to achieve smooth layouts and high-fidelity scroll animations.",
+      "A modern developer portfolio showcasing projects, animations, and responsive UI. Built with React, Tailwind CSS, and GSAP to deliver a smooth, high-performance user experience.",
+    tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
     github: "https://github.com/HarshitaJoshi04/portfolio",
     live: "https://harshitajoshi.vercel.app/",
   },
+
+{
+  title: "Upcoming Project",
+  image: "https://placehold.co/600x400/0f172a/ffffff?text=Coming+Soon",
+  description:
+    "Currently building an AI-powered full-stack application with workflow automation, modern UI, and scalable backend architecture.",
+  tech: [
+    "React",
+    "Next.js",
+    "Node.js",
+    "MongoDB",
+    "AI",
+    "Automation",
+  ],
+  github: "#",
+  live: "#",
+}
 ];
 
 export default function Slider() {
@@ -66,82 +86,132 @@ export default function Slider() {
         >
           <FaChevronLeft size={18} />
         </button>
+<Swiper
+  modules={[Navigation]}
+  onSwiper={(swiper) => (swiperRef.current = swiper)}
+  spaceBetween={24}
+  slidesPerView={1}
+  centeredSlides={false}
+  loop={true}
+  speed={700}
+  grabCursor={true}
 
-        <Swiper
-          modules={[Navigation]}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          centeredSlides
-          loop={projects.length > 2}
-          spaceBetween={24}
-          className="w-[85%]"
-          breakpoints={{
-            0: { slidesPerView: 1.1 },
-            640: { slidesPerView: 1.5 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index} className="flex justify-center py-4">
-              <div className={`w-full max-w-[360px] rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 shadow-lg ${
-                isDark
-                  ? "bg-slate-900/60 border-slate-800/80 text-white shadow-black/25"
-                  : "bg-white/80 border-slate-200/80 text-slate-800 shadow-slate-100"
-              } backdrop-blur-md`}>
-                
-                <div className="relative overflow-hidden h-[180px] border-b border-slate-200/10">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  }}
+>
+{projects.map((project, index) => {
+  const isUpcoming = project.github === "#" && project.live === "#";
 
-                <div className="p-5 space-y-2 text-left">
-                  <h3 className={`text-base md:text-lg font-bold ${
-                    isDark ? "text-slate-100" : "text-slate-800"
-                  }`}>
-                    {project.title}
-                  </h3>
+  return (
+    <SwiperSlide key={index} className="flex justify-center py-4">
+      <div
+        className={`group flex flex-col w-full max-w-[360px] h-[620px] overflow-hidden rounded-3xl border backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+          isDark
+            ? "bg-slate-900/60 text-white"
+            : "bg-white/80 text-slate-800"
+        } ${
+          isUpcoming
+            ? "border-dashed border-blue-500"
+            : isDark
+            ? "border-slate-800"
+            : "border-slate-200"
+        }`}
+      >
+        {/* Image */}
+        <div className="h-52 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
 
-                  <p className={`text-sm leading-relaxed ${
-                    isDark ? "text-slate-300" : "text-slate-600"
-                  }`}>
-                    {project.description}
-                  </p>
-                </div>
+        {/* Content */}
+        <div className="flex flex-col flex-1 p-6">
+          {isUpcoming && (
+            <span className="mb-3 w-fit rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
+              🚀 Coming Soon
+            </span>
+          )}
 
-                <div className="flex justify-start gap-4 px-5 pb-5">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 rounded-lg transition-colors cursor-pointer ${
-                      isDark
-                        ? "bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    <FaGithub size={18} />
-                  </a>
+          <h3
+            className={`text-xl font-bold ${
+              isDark ? "text-white" : "text-slate-900"
+            }`}
+          >
+            {project.title}
+          </h3>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 rounded-lg transition-colors cursor-pointer ${
-                      isDark
-                        ? "bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    <FiExternalLink size={18} />
-                  </a>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
+          <p
+            className={`mt-3 text-sm leading-7 flex-1 ${
+              isDark ? "text-slate-300" : "text-slate-600"
+            }`}
+          >
+            {project.description}
+          </p>
+
+          {/* Tech Stack */}
+          <div className="mt-5 flex flex-wrap gap-2">
+            {(project.tech || []).map((item, i) => (
+              <span
+                key={i}
+                className={`rounded-full px-3 py-1 text-xs font-medium ${
+                  isDark
+                    ? "border border-blue-500/20 bg-blue-500/15 text-blue-300"
+                    : "bg-blue-100 text-blue-700"
+                }`}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-auto pt-6 flex gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex flex-1 items-center justify-center gap-2 rounded-xl py-3 transition ${
+                isUpcoming
+                  ? "pointer-events-none opacity-40 bg-slate-500"
+                  : isDark
+                  ? "bg-slate-800 hover:bg-blue-600"
+                  : "bg-slate-100 hover:bg-blue-600 hover:text-white"
+              }`}
+            >
+              <FaGithub />
+              Code
+            </a>
+
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex flex-1 items-center justify-center gap-2 rounded-xl py-3 transition ${
+                isUpcoming
+                  ? "pointer-events-none opacity-40 bg-slate-500"
+                  : "bg-blue-600 text-white hover:bg-blue-700"
+              }`}
+            >
+              <FiExternalLink />
+              Live
+            </a>
+          </div>
+        </div>
+      </div>
+    </SwiperSlide>
+  );
+})}
         </Swiper>
 
         {/* Desktop Next */}

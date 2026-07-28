@@ -9,7 +9,7 @@ const App = () => {
   const [theme] = useContext(Theme);
   return (
     <div
-      className={`${theme} min-h-screen font-sans transition-colors duration-500`}
+      className={`${theme} min-h-screen font-sans`}
     >
       
       <ParticlesBackground />
