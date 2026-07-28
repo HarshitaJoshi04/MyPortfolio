@@ -105,7 +105,11 @@ const Home = () => {
                   isDark ? "text-slate-300" : "text-slate-700"
                 }`}
               >
-                 Full Stack Developer specializing in React, Next.js, Node.js, Express, and MongoDB. I craft responsive web experiences, build scalable backend systems, and develop AI-powered applications focused on performance, usability, and clean architecture.
+                Full Stack Developer specializing in React, Next.js, Node.js,
+                Express, and MongoDB. I craft responsive web experiences,
+                build scalable backend systems, and develop AI-powered
+                applications focused on performance, usability, and clean
+                architecture.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -134,7 +138,7 @@ const Home = () => {
             </div>
 
             {/* Right */}
-            <div className="relative flex justify-center mt-4 lg:mt-0">
+            <div className="relative flex flex-col items-center mt-4 lg:mt-0">
               {/* Decorative Rings - hidden on very small screens to avoid clipping */}
               <div
                 className={`hidden xs:block absolute w-64 h-64 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] rounded-full border ${
@@ -166,9 +170,9 @@ const Home = () => {
                   className="absolute inset-0 m-auto w-32 h-32 xs:w-40 xs:h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white/20 shadow-[0_0_80px_rgba(59,130,246,.45)]"
                 />
 
-                {/* Floating Cards - absolute on sm+, hidden on the smallest screens */}
+                {/* Floating Cards - absolute on lg+, hidden below that to avoid overlap on small screens */}
                 <div
-                  className={`hidden sm:block absolute top-6 -left-10 px-5 py-3 rounded-2xl backdrop-blur-md border ${
+                  className={`hidden lg:block absolute top-6 -left-10 px-5 py-3 rounded-2xl backdrop-blur-md border text-sm ${
                     isDark
                       ? "bg-slate-900/70 border-white/10 text-white"
                       : "bg-white/60 backdrop-blur-xl border-white shadow-xl shadow-blue-100"
@@ -179,7 +183,7 @@ const Home = () => {
                 </div>
 
                 <div
-                  className={`hidden sm:block absolute bottom-10 -right-12 px-5 py-3 rounded-2xl backdrop-blur-md border ${
+                  className={`hidden lg:block absolute bottom-10 -right-12 px-5 py-3 rounded-2xl backdrop-blur-md border text-sm ${
                     isDark
                       ? "bg-slate-900/70 border-white/10 text-white"
                       : "bg-white/80 border-slate-200"
@@ -190,7 +194,7 @@ const Home = () => {
                 </div>
 
                 <div
-                  className={`hidden lg:block absolute top-1/2 -right-16 px-5 py-3 rounded-2xl backdrop-blur-md border ${
+                  className={`hidden lg:block absolute top-1/2 -right-14 xl:-right-16 px-5 py-3 rounded-2xl backdrop-blur-md border ${
                     isDark
                       ? "bg-slate-900/70 border-white/10 text-white"
                       : "bg-white/80 border-slate-200"
@@ -201,8 +205,8 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Mobile-only stat grid, replaces the floating cards below sm breakpoint */}
-              <div className="grid sm:hidden grid-cols-2 gap-3 mt-8 w-full max-w-xs">
+              {/* Stat grid for small/medium screens only — hidden on phones, replaced by floating cards on lg+ */}
+              <div className="hidden sm:grid lg:hidden grid-cols-2 gap-3 mt-8 w-full max-w-xs">
                 <div
                   className={`px-4 py-3 rounded-2xl border text-center ${
                     isDark

@@ -11,39 +11,44 @@ const Contact = () => {
   const [theme] = useContext(Theme);
   const isDark = theme === "Dark";
 
-  const submitHandle = (e) => {
-    e.preventDefault();
+const submitHandle = async (e) => {
+  e.preventDefault();
 
-    if (!text || !email || !message) {
-      alert("Please fill all fields");
-      return;
-    }
+  if (!text.trim() || !email.trim() || !message.trim()) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
-    const templateParams = {
-      from_name: text,
-      from_email: email,
-      message: message,
-    };
-
-    emailjs
-      .send(
-        "service_mcospxx",
-        "template_zcgl4ql",
-        templateParams,
-        "OWfa3PnctzOOuZz0N"
-      )
-      .then(() => {
-        alert("Message sent successfully!");
-        setText("");
-        setEmail("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Failed to send message");
-      });
+  const templateParams = {
+    from_name: text,
+    from_email: email,
+    message: message,
   };
 
+  try {
+    const response = await emailjs.send(
+      "service_vm0lu6y",
+      "template_zcgl4ql",
+      templateParams,
+      "OWfa3PnctzOOuZz0N"
+    );
+
+    console.log("SUCCESS!", response);
+
+    alert("Message sent successfully!");
+
+    setText("");
+    setEmail("");
+    setMessage("");
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+
+    alert(
+      error?.text ||
+        "Failed to send message. Please check your EmailJS configuration."
+    );
+  }
+};
   return (
     <div
       className={`relative min-h-screen overflow-hidden py-20 lg:py-28 `}
@@ -129,7 +134,7 @@ const Contact = () => {
                 >
                   <p className="text-xs text-slate-400">Email</p>
                   <h3 className="font-semibold mt-2 text-sm break-all">
-                    hjoshikspuk04@email.com
+                    harshitajoshi0409@gmail.com
                   </h3>
                 </div>
 

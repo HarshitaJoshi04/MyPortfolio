@@ -11,9 +11,7 @@ const About = () => {
   const isDark = theme === "Dark";
 
   return (
-    <div
-      className={`relative min-h-screen overflow-hidden bg-[ #9b7d9653]`}
-    >
+    <div className="relative min-h-screen overflow-hidden">
       {!isDark && (
         <>
           <div className="absolute -top-40 -left-40 w-[280px] h-[280px] sm:w-[450px] sm:h-[450px] rounded-full bg-sky-200/60 blur-[110px] sm:blur-[150px]" />
@@ -23,7 +21,7 @@ const About = () => {
       )}
 
       {/* Blue Glow */}
-    <div
+      <div
         className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
         w-[220px] h-[220px]
         sm:w-[500px] sm:h-[500px]
@@ -36,7 +34,6 @@ const About = () => {
             : "bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 opacity-70"
         }`}
       />
-  
 
       <section
         id="about"
@@ -128,7 +125,7 @@ const About = () => {
               </div>
 
               {/* RIGHT */}
-              <div className="relative flex justify-center mt-4 lg:mt-0">
+              <div className="relative flex flex-col items-center mt-4 lg:mt-0">
                 {/* Decorative ring - hidden on very small screens to avoid clipping */}
                 <div
                   className={`hidden xs:block absolute w-64 h-64 sm:w-96 sm:h-96 rounded-full border ${
@@ -149,7 +146,7 @@ const About = () => {
                     className="w-48 xs:w-56 sm:w-72 md:w-80 lg:w-96 object-contain"
                   />
 
-                  {/* Floating Cards - absolute on lg+, replaced by mobile grid below */}
+                  {/* Floating Cards - absolute on lg+ only, avoids overlap on smaller screens */}
                   <div
                     className={`hidden lg:block absolute -top-6 -left-6 px-5 py-3 rounded-2xl backdrop-blur-md border ${
                       isDark
@@ -173,8 +170,8 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Mobile-only stat grid, replaces the floating cards below lg breakpoint */}
-                <div className="grid lg:hidden grid-cols-2 gap-3 mt-8 w-full max-w-xs">
+                {/* Stat grid for small/medium screens only — hidden on phones, replaced by floating cards on lg+ */}
+                <div className="hidden sm:grid lg:hidden grid-cols-2 gap-3 mt-8 w-full max-w-xs">
                   <div
                     className={`px-4 py-3 rounded-2xl border text-center ${
                       isDark
