@@ -158,10 +158,10 @@ const Home = () => {
                   rotateOnHover
                   hue={3}
                   forceHoverState={false}
-                  backgroundColor={isDark ? "#0b0f19" : "#f8fbff"}
-                  baseColor1={isDark ? "#dbeafe" : "#3b82f6"}
-                  baseColor2="#60a5fa"
-                  baseColor3="#1d4ed8"
+                  backgroundColor={isDark ? "#0b0f19" : "#eef5f9"}
+                  baseColor1={isDark ? "#dbeafe" : "#1a7ff3"}
+                  baseColor2="#078fa1"
+                  baseColor3="#10359b"
                 />
 
                 <img
