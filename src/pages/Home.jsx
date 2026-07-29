@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Orb from "../components/landingPage/Orb";
-import profileImg from "../assets/img2.png";
+import avatar from "../assets/avatr.jpeg";
 import HeroText from "../components/landingPage/HeroText";
 import { Theme } from "../components/themecontext/ThemeContext";
 import Icons from "../components/icons/Icons";
@@ -165,7 +165,7 @@ const Home = () => {
                 />
 
                 <img
-                  src={profileImg}
+                  src={avatar}
                   alt="Profile"
                   className="absolute inset-0 m-auto w-32 h-32 xs:w-40 xs:h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white/20 shadow-[0_0_80px_rgba(59,130,246,.45)]"
                 />

@@ -83,28 +83,11 @@ const About = () => {
                   <Para isDark={isDark} />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 sm:gap-5 mt-10">
-                  <div
-                    className={`rounded-2xl sm:rounded-3xl p-5 sm:p-6 backdrop-blur-md border ${
-                      isDark
-                        ? "bg-slate-900/70 border-white/10 text-white"
-                        : "bg-white/70 border-white shadow-lg shadow-blue-100"
-                    }`}
-                  >
-                    <h2 className="text-3xl sm:text-4xl font-bold text-blue-500">
-                      15+
-                    </h2>
-                    <p
-                      className={`mt-2 text-sm sm:text-base ${
-                        isDark ? "text-slate-400" : "text-slate-600"
-                      }`}
-                    >
-                      Projects Built
-                    </p>
-                  </div>
+                <div className="mt-10">
+                 
 
                   <div
-                    className={`rounded-2xl sm:rounded-3xl p-5 sm:p-6 backdrop-blur-md border ${
+                    className={`rounded-2xl sm:rounded-3xl text-center p-5 sm:p-6 backdrop-blur-md border ${
                       isDark
                         ? "bg-slate-900/70 border-white/10 text-white"
                         : "bg-white/70 border-white shadow-lg shadow-blue-100"

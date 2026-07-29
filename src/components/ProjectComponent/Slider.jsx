@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import blogImg from "../../assets/blogapp.png";
 import studyAi from "../../assets/studyai.png";
 import portfolio from "../../assets/portfolio.png";
 import "swiper/css";
