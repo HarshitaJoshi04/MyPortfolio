@@ -3,20 +3,29 @@ import { Theme } from "../themecontext/ThemeContext";
 
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript"],
+    title: "Frontend Development",
+    skills: ["React.js (Vite)", "Next.js", "Tailwind CSS", "JavaScript (ES6+)"],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Express.js", "REST APIs", "JWT"],
+    title: "Backend Engineering",
+    skills: ["Node.js / Express.js", "Python / FastAPI", "RESTful APIs", "Service Orchestration"],
   },
   {
-    title: "Database",
-    skills: ["MongoDB", "Mongoose", "Cloudinary"],
+    title: "Databases & Vector Stores",
+    skills: ["MongoDB / Mongoose", "ChromaDB (Vector Database)", "Metadata Filtering", "Data Modeling"],
   },
   {
-    title: "Tools & AI",
-    skills: ["Git", "GitHub", "OpenAI API", "Vercel"],
+    title: "AI & RAG Systems",
+    skills: [
+      "Retrieval-Augmented Generation (RAG)",
+      "Groq SDK / Llama Integration",
+      "LangChain Text Splitters",
+      "BGE Embeddings (Sentence Transformers)",
+    ],
+  },
+  {
+    title: "DevOps & Cloud Tools",
+    skills: ["AWS EC2", "Linux / Systemd Services", "Git & GitHub", "Vercel / Render"],
   },
 ];
 

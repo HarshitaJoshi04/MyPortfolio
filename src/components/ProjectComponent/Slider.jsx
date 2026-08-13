@@ -9,24 +9,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import H1 from "../headingAnimation/H1";
 import { Theme } from "../themecontext/ThemeContext";
-
+import codeSense from "../../assets/codeSense.png"; // Import the codeSense image
 const projects = [
   {
-    title: "StudyAI",
-    image: studyAi,
-  description:
-    "AI-powered MERN platform that converts YouTube videos into structured notes through automated AI workflows.",
-  tech: [
-    "React",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "OpenAI",
-    "Make.com",
-    "Cloudinary"
-  ],
-    github: "https://github.com/HarshitaJoshi04/study-AI",
-    live: "https://study-ai-two-rust.vercel.app/",
+    title: "CodeSenseAI",
+    image: codeSense,
+    description:
+      "A repository-aware AI developer assistant that analyzes local and GitHub codebases and answers questions about files, project structure, dependencies, and code logic using context-grounded retrieval.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "MongoDB",
+      "ChromaDB",
+      "Groq API"
+    ],
+    github: "https://github.com/HarshitaJoshi04/CodeSenseAI",
+    live: "https://code-sense-ai-green.vercel.app/"
   },
 
   {
@@ -35,7 +35,7 @@ const projects = [
     description:
       "A modern developer portfolio showcasing projects, animations, and responsive UI. Built with React, Tailwind CSS, and GSAP to deliver a smooth, high-performance user experience.",
     tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
-    github: "https://github.com/HarshitaJoshi04/portfolio",
+    github: "https://github.com/HarshitaJoshi04/MyPortfolio",
     live: "http://harshita-portfolio-88.vercel.app/",
   },
 

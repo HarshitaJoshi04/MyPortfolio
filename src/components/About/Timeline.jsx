@@ -15,10 +15,10 @@ const timelineData = [
     desc: "Developing scalable full-stack web applications using React, Next.js, Node.js, Express, and MongoDB with a focus on responsive UI, authentication, REST APIs, and clean architecture.",
   },
   {
-    role: "AI & Automation",
+    role: "AI-Powered Web Apps",
     company: "Personal Projects",
     duration: "2025 – Present",
-    desc: "Building AI-powered applications by integrating Large Language Models, automation workflows, and modern APIs to create intelligent, real-world web solutions.",
+    desc: "Building AI-enabled web applications, including custom coding assistants, by integrating language models (Llama/Groq) and vector databases (ChromaDB) to perform intelligent search and analysis.",
   },
 ];
 
