@@ -87,7 +87,7 @@ const Home = () => {
               </h1>
 
               <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px] leading-none italic font-light bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                digital.
+                products.
               </h1>
 
               <div className="mt-8">
