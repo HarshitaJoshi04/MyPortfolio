@@ -171,21 +171,7 @@ export default function Slider() {
 
       {/* Buttons */}
       <div className="flex gap-3 mt-6">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center justify-center gap-2 flex-1 py-2.5 rounded-xl transition ${
-            project.github === "#"
-              ? "pointer-events-none opacity-40"
-              : isDark
-              ? "bg-slate-800 hover:bg-blue-600"
-              : "bg-slate-100 hover:bg-blue-600 hover:text-white"
-          }`}
-        >
-          <FaGithub />
-          Code
-        </a>
+
 
         <a
           href={project.live}
