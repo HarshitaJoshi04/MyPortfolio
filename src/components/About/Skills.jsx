@@ -8,11 +8,11 @@ const skillCategories = [
   },
   {
     title: "Backend Engineering",
-    skills: ["Node.js / Express.js", "Python / FastAPI", "RESTful APIs", "Service Orchestration"],
+    skills: ["Node.js / Express.js", "Python / FastAPI", "RESTful APIs"],
   },
   {
     title: "Databases & Vector Stores",
-    skills: ["MongoDB / Mongoose", "ChromaDB (Vector Database)", "Metadata Filtering", "Data Modeling"],
+    skills: ["MongoDB / Mongoose", "ChromaDB (Vector Database)"],
   },
   {
     title: "AI & RAG Systems",
@@ -25,7 +25,7 @@ const skillCategories = [
   },
   {
     title: "DevOps & Cloud Tools",
-    skills: ["AWS EC2", "Linux / Systemd Services", "Git & GitHub", "Vercel / Render"],
+    skills: ["AWS EC2", "Git & GitHub", "Vercel / Render"],
   },
 ];
 

@@ -6,7 +6,7 @@ const timelineData = [
     role: "Bachelor of Technology",
     company: "Computer Science & Engineering",
     duration: "2023 – 2027",
-    desc: "Pursuing a Bachelor's degree in Computer Science while building a strong foundation in software development, data structures, algorithms, databases, and computer networks.",
+    desc: "Pursuing a Bachelor's degree in Computer Science while building foundation in software development, data structures, algorithms, databases, and computer networks.",
   },
   {
     role: "Full Stack MERN Development",
