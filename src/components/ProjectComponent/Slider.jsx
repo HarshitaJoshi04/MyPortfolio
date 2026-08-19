@@ -25,7 +25,7 @@ const projects = [
       "ChromaDB",
       "Groq API"
     ],
-    github: "https://github.com/HarshitaJoshi04/CodeSenseAI",
+
     live: "https://code-sense-ai-green.vercel.app/"
   },
 
@@ -35,7 +35,6 @@ const projects = [
     description:
       "A modern developer portfolio showcasing projects, animations, and responsive UI. Built with React, Tailwind CSS, and GSAP to deliver a smooth, high-performance user experience.",
     tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
-    github: "https://github.com/HarshitaJoshi04/MyPortfolio",
     live: "http://harshita-portfolio-88.vercel.app/",
   },
 
