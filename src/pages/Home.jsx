@@ -113,9 +113,16 @@ const Home = () => {
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                                <a
+                    href="/resume.pdf"
+ 
+                  className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 hover:from-blue-500 hover:to-blue-700 transition text-white font-medium shadow-xl shadow-blue-500/30 text-center"
+                >
+                  Resume
+                </a>
                 <a
                   href="#projects"
-                  className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition text-white font-medium shadow-xl shadow-blue-500/30 text-center"
+                  className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 hover:from-blue-500 hover:to-blue-700 transition text-white font-medium shadow-xl shadow-blue-500/30 text-center"
                 >
                   View Projects
                 </a>
