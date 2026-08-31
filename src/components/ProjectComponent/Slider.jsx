@@ -18,7 +18,7 @@ import codeSense from "../../assets/codeSense.png";
 
 import invoiceVideo from "../../assets/invoice.mp4";
 import logisticsVideo from "../../assets/ai-logistics.mp4";
-import codeSenseVideo from "../../assets/codesense.mp4";
+import codeSenseVideo from "../../assets/codeSense.mp4";
 
 import "swiper/css";
 import "swiper/css/navigation";
