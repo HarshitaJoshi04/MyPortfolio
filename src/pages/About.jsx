@@ -94,7 +94,7 @@ const About = () => {
                     }`}
                   >
                     <h2 className="text-3xl sm:text-4xl font-bold text-blue-500">
-                      MERN
+                      MERN/AI Automation
                     </h2>
                     <p
                       className={`mt-2 text-sm sm:text-base ${

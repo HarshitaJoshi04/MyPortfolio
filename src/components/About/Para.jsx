@@ -2,9 +2,11 @@ import React from "react";
 
 const Para = ({ isDark = true }) => {
   return (
-    <div className={`space-y-4 text-[15px] sm:text-[16px] leading-relaxed transition-colors duration-300 ${
-      isDark ? "text-slate-300" : "text-slate-600"
-    }`}>
+    <div
+      className={`space-y-4 text-[15px] sm:text-[16px] leading-relaxed transition-colors duration-300 ${
+        isDark ? "text-slate-300" : "text-slate-600"
+      }`}
+    >
       <p
         className={`leading-8 ${
           isDark ? "text-slate-300" : "text-slate-700"
@@ -21,10 +23,11 @@ const Para = ({ isDark = true }) => {
           isDark ? "text-slate-300" : "text-slate-700"
         }`}
       >
-        Beyond frontend interfaces, I design secure backend systems, REST APIs,
-        and database architectures. I also build AI-powered applications,
-        such as custom chatbots that read codebase files and retrieve
-        real-time answers using vector databases (like ChromaDB).
+        Beyond web development, I build AI-powered applications and intelligent
+        automation workflows using technologies such as Groq, Llama, n8n, and
+        REST APIs. I've worked on projects involving AI agents, invoice
+        processing, workflow automation, codebase analysis, and RAG systems
+        using vector databases like ChromaDB.
       </p>
 
       <p
@@ -33,10 +36,11 @@ const Para = ({ isDark = true }) => {
         }`}
       >
         Currently pursuing my Bachelor's degree in Computer Science, I'm
-        continuously improving my skills through hands-on projects, problem solving,
-        and learning modern tech stacks. My goal is to create software that is
-        fast, accessible, visually appealing, and delivers meaningful user
-        experiences.
+        continuously strengthening my skills through hands-on projects,
+        problem-solving, and exploring modern technologies. My goal is to build
+        software that is scalable, efficient, visually appealing, and capable
+        of solving real-world problems through thoughtful engineering and
+        automation.
       </p>
     </div>
   );

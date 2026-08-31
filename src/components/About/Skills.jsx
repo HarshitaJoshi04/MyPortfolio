@@ -4,15 +4,26 @@ import { Theme } from "../themecontext/ThemeContext";
 const skillCategories = [
   {
     title: "Frontend Development",
-    skills: ["React.js (Vite)", "Next.js", "Tailwind CSS", "JavaScript (ES6+)"],
+    skills: [
+      "React.js (Vite)",
+      "Next.js",
+      "Tailwind CSS",
+      "JavaScript (ES6+)",
+    ],
   },
   {
     title: "Backend Engineering",
-    skills: ["Node.js / Express.js", "Python / FastAPI", "RESTful APIs"],
+    skills: [
+      "Node.js / Express.js",
+      "RESTful APIs",
+    ],
   },
   {
     title: "Databases & Vector Stores",
-    skills: ["MongoDB / Mongoose", "ChromaDB (Vector Database)"],
+    skills: [
+      "MongoDB / Mongoose",
+      "ChromaDB (Vector Database)",
+    ],
   },
   {
     title: "AI & RAG Systems",
@@ -24,8 +35,21 @@ const skillCategories = [
     ],
   },
   {
+    title: "AI Automation & Workflows",
+    skills: [
+      "n8n Workflow Automation",
+      "AI Agents & Automation",
+      "Webhooks & API Integrations",
+      "Automated Data Processing",
+    ],
+  },
+  {
     title: "DevOps & Cloud Tools",
-    skills: ["AWS EC2", "Git & GitHub", "Vercel / Render"],
+    skills: [
+      "AWS EC2",
+      "Git & GitHub",
+      "Vercel / Render",
+    ],
   },
 ];
 
@@ -35,9 +59,14 @@ const Skills = () => {
 
   return (
     <div className="w-full mt-10">
-      <h3 className={`text-xl font-bold mb-6 transition-colors duration-300 ${isDark ? "text-slate-200" : "text-slate-800"}`}>
+      <h3
+        className={`text-xl font-bold mb-6 transition-colors duration-300 ${
+          isDark ? "text-slate-200" : "text-slate-800"
+        }`}
+      >
         Technical Toolkit
       </h3>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {skillCategories.map((category, index) => (
           <div
@@ -51,11 +80,22 @@ const Skills = () => {
             <h4 className="font-bold text-base mb-4 border-b pb-2 border-slate-200/10 text-blue-500">
               {category.title}
             </h4>
+
             <ul className="space-y-2">
               {category.skills.map((skill, sIndex) => (
-                <li key={sIndex} className="flex items-center gap-2 text-sm">
+                <li
+                  key={sIndex}
+                  className="flex items-center gap-2 text-sm"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                  <span className={isDark ? "text-slate-300" : "text-slate-600"}>{skill}</span>
+
+                  <span
+                    className={
+                      isDark ? "text-slate-300" : "text-slate-600"
+                    }
+                  >
+                    {skill}
+                  </span>
                 </li>
               ))}
             </ul>

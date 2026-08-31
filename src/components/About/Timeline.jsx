@@ -6,7 +6,7 @@ const timelineData = [
     role: "Bachelor of Technology",
     company: "Computer Science & Engineering",
     duration: "2023 – 2027",
-    desc: "Pursuing a Bachelor's degree in Computer Science while building foundation in software development, data structures, algorithms, databases, and computer networks.",
+    desc: "Pursuing a Bachelor's degree in Computer Science while building foundation in software development.",
   },
   {
     role: "Full Stack MERN Development",
@@ -18,7 +18,13 @@ const timelineData = [
     role: "AI-Powered Web Apps",
     company: "Personal Projects",
     duration: "2025 – Present",
-    desc: "Building AI-enabled web applications, including custom coding assistants, by integrating language models (Llama/Groq) and vector databases (ChromaDB) to perform intelligent search and analysis.",
+    desc: "Building AI-enabled web applications, including custom coding assistants, by integrating language models such as Llama and Groq with vector databases like ChromaDB for intelligent search, retrieval, and analysis.",
+  },
+  {
+    role: "AI Automation & Workflow Engineering",
+    company: "Personal Projects",
+    duration: "2026 – Present",
+    desc: "Building intelligent automation workflows using n8n, AI agents, APIs, and webhooks to automate real-world processes such as invoice processing, data extraction, validation, notifications, and logistics exception handling.",
   },
 ];
 

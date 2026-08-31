@@ -3,17 +3,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import studyAi from "../../assets/studyai.png";
-import portfolio from "../../assets/portfolio.png";
+import invoice from "../../assets/ai-invoice.png";
+import logistics from "../../assets/ai-logistics.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import H1 from "../headingAnimation/H1";
 import { Theme } from "../themecontext/ThemeContext";
 import codeSense from "../../assets/codeSense.png"; // Import the codeSense image
+import invoiceVideo from "../../assets/invoice.mp4";
+import logisticsVideo from "../../assets/ai-logistics.mp4";
+import codeSenseVideo from "../../assets/codesense.mp4";
 const projects = [
   {
     title: "CodeSenseAI",
     image: codeSense,
+    video: codeSenseVideo,
     description:
       "A repository-aware AI developer assistant that analyzes local and GitHub codebases and answers questions about files, project structure, dependencies, and code logic using context-grounded retrieval.",
     tech: [
@@ -23,54 +27,45 @@ const projects = [
       "FastAPI",
       "MongoDB",
       "ChromaDB",
-      "Groq API"
+      "Groq API",
     ],
-
-    live: "https://code-sense-ai-green.vercel.app/"
+    live: "https://code-sense-ai-green.vercel.app/",
   },
 
   {
-    title: "Portfolio Website",
-    image: portfolio,
+    title: "AI Logistics Agent",
+    image: logistics,
+    video: logisticsVideo,
     description:
-      "A modern developer portfolio showcasing projects, animations, and responsive UI. Built with React, Tailwind CSS, and GSAP to deliver a smooth, high-performance user experience.",
-    tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
-    live: "http://harshita-portfolio-88.vercel.app/",
+      "AI-powered logistics application that monitors vehicle exceptions and uses automated workflows and AI-based analysis to process operational events.",
+    tech: [
+      "React",
+      "Express",
+      "Node.js",
+      "MongoDB",
+      "AI",
+      "n8n",
+    ],
+    live: "https://ai-logistics-agent-beige.vercel.app/",
   },
 
-{
-  title: "Upcoming Project",
-  image: "https://placehold.co/600x400/0f172a/ffffff?text=Coming+Soon",
-  description:
-    "Currently building an AI-powered full-stack application with workflow automation, modern UI, and scalable backend architecture.",
-  tech: [
-    "React",
-    "Next.js",
-    "Node.js",
-    "MongoDB",
-    "AI",
-    "Automation",
-  ],
-  github: "#",
-  live: "#",
-},
-
-{
-  title: "Upcoming Project",
-  image: "https://placehold.co/600x400/0f172a/ffffff?text=Coming+Soon",
-  description:
-    "Currently building an AI-powered full-stack application with workflow automation, modern UI, and scalable backend architecture.",
-  tech: [
-    "React",
-    "Next.js",
-    "Node.js",
-    "MongoDB",
-    "AI",
-    "Automation",
-  ],
-  github: "#",
-  live: "#",
-}
+  {
+    title: "AI Invoice Intelligence & Automation",
+    image: invoice,
+    video: invoiceVideo,
+    description:
+      "AI-powered invoice processing platform supporting manual uploads and email-triggered automation for extraction, validation, duplicate detection, and database storage.",
+    tech: [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "n8n",
+      "Groq AI",
+      "OCR",
+      "Automation",
+    ],
+    live: "https://ai-invoice-fv19.onrender.com",
+  },
 ];
 
 export default function Slider() {
@@ -127,13 +122,39 @@ export default function Slider() {
       : "bg-white/80 border-slate-200 text-slate-800"
   }`}
 >
-    {/* Image */}
-    <div className="h-52 overflow-hidden">
+{/* Project Demo Video */}
+<div className="relative h-52 overflow-hidden bg-slate-950 group/video">
   <img
     src={project.image}
     alt={project.title}
-    className="w-full h-full object-cover"
+    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover/video:opacity-0"
   />
+
+  <video
+    src={project.video}
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover/video:opacity-100"
+    onMouseEnter={(e) => e.currentTarget.play()}
+    onMouseLeave={(e) => {
+      e.currentTarget.pause();
+      e.currentTarget.currentTime = 0;
+    }}
+  />
+
+  {/* Play indicator */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-300 group-hover/video:scale-110 group-hover/video:opacity-0">
+      ▶
+    </div>
+  </div>
+
+  {/* Demo label */}
+  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-white text-xs font-medium">
+    ▶ Live Demo
+  </div>
 </div>
     {/* Content */}
     <div className="flex flex-col flex-1 p-6">
