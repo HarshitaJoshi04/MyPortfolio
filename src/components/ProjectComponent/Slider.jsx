@@ -2,6 +2,7 @@ import React, { useRef, useContext, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { motion, useReducedMotion } from "motion/react";
 
 import {
   FaChevronLeft,
@@ -23,7 +24,6 @@ import codeSenseVideo from "../../assets/codeSense.mp4";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import H1 from "../headingAnimation/H1";
 import { Theme } from "../themecontext/ThemeContext";
 
 const projects = [
@@ -84,6 +84,7 @@ const projects = [
 export default function Slider() {
   const [theme] = useContext(Theme);
   const isDark = theme === "Dark";
+  const shouldReduceMotion = useReducedMotion();
 
   const swiperRef = useRef(null);
 
@@ -92,20 +93,7 @@ export default function Slider() {
 
   return (
     <>
-      <section
-        id="projects"
-        className="py-12 w-full flex flex-col items-center text-center overflow-hidden"
-      >
-        {/* Heading */}
-        <div className="mb-10">
-          <H1
-            text="Projects"
-            duration={0.7}
-            isDark={isDark}
-            stagger={0.2}
-          />
-        </div>
-
+      <section className="py-5 sm:py-8 w-full flex flex-col items-center text-center overflow-hidden">
         <div className="relative w-full flex items-center justify-center">
           {/* Desktop Previous Button */}
           <button
@@ -146,32 +134,43 @@ export default function Slider() {
             className="w-full px-0 sm:px-14 lg:px-20"
           >
             {projects.map((project, index) => (
-              <SwiperSlide
-                key={index}
-                className="flex justify-center py-4"
-              >
+              <SwiperSlide key={project.title} className="flex justify-center py-5">
                 {/* Project Card */}
-                <div
-                  className={`group flex flex-col w-full max-w-[360px] h-[620px]
-                  overflow-hidden rounded-3xl border backdrop-blur-xl
-                  transition-all duration-300 hover:-translate-y-2
-                  hover:shadow-2xl ${
+                <motion.article
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 34, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.18 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.65, delay: shouldReduceMotion ? 0 : index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={shouldReduceMotion ? undefined : { y: -10, scale: 1.015 }}
+                  className={`project-card group relative flex flex-col w-full max-w-[380px] min-h-[590px]
+                  overflow-hidden rounded-[28px] border backdrop-blur-xl
+                  shadow-xl transition-shadow duration-500 hover:shadow-2xl ${
                     isDark
-                      ? "bg-slate-900/60 border-slate-800 text-white"
-                      : "bg-white/80 border-slate-200 text-slate-800"
+                      ? "bg-slate-950/75 border-white/10 text-white hover:border-cyan-300/40"
+                      : "bg-white/85 border-white text-slate-800 hover:border-blue-300"
                   }`}
                 >
+                  <div className="project-card-glow pointer-events-none absolute -inset-px rounded-[inherit] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   {/* ================= VIDEO / IMAGE ================= */}
                   <div
-                    className="relative h-52 overflow-hidden bg-slate-950 cursor-pointer group/video"
+                    className="relative h-52 overflow-hidden bg-slate-950 cursor-pointer group/video focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-cyan-300"
                     onClick={() => setSelectedVideo(project)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Play ${project.title} demo`}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setSelectedVideo(project);
+                      }
+                    }}
                   >
                     {/* Screenshot */}
                     <img
                       src={project.image}
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover
-                      transition-opacity duration-300
+                      transition-[transform,opacity] duration-700 ease-out group-hover/video:scale-110
                       group-hover/video:opacity-0"
                     />
 
@@ -183,7 +182,7 @@ export default function Slider() {
                       playsInline
                       preload="metadata"
                       className="absolute inset-0 w-full h-full object-cover
-                      opacity-0 transition-opacity duration-300
+                      opacity-0 transition-[transform,opacity] duration-500 group-hover/video:scale-105
                       group-hover/video:opacity-100"
                       onMouseEnter={(e) => {
                         e.currentTarget.play().catch(() => {});
@@ -231,7 +230,7 @@ export default function Slider() {
                   </div>
 
                   {/* ================= CONTENT ================= */}
-                  <div className="flex flex-col flex-1 p-6">
+                  <div className="relative z-[1] flex flex-col flex-1 p-6">
                     {/* Title */}
                     <h3
                       className={`text-xl font-bold ${
@@ -284,7 +283,7 @@ export default function Slider() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </motion.article>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -1,31 +1,40 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
+import { useReducedMotion } from "motion/react";
 
 const Button = () => {
   const navigate = useNavigate();
   const buttonRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    // Entrance animation
-    gsap.from(buttonRef.current, {
+    const timeline = gsap.timeline();
+    timeline.fromTo(buttonRef.current, {
       y: 60,
       opacity: 0,
+      scale: 0.92,
+    }, {
+      y: 0,
+      opacity: 1,
+      scale: 1,
       duration: 1,
-      delay: 0.8, // comes after hero text
+      delay: shouldReduceMotion ? 0 : 0.8,
       ease: "power3.out",
     });
 
-    // Subtle floating animation
-    gsap.to(buttonRef.current, {
-      y: -8,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-      opacity:2
-    });
-  }, []);
+    if (!shouldReduceMotion) {
+      timeline.to(buttonRef.current, {
+        y: -7,
+        duration: 2.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    }
+
+    return () => timeline.kill();
+  }, [shouldReduceMotion]);
 
   return (
     <button

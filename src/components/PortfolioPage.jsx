@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Navbar from "./landingPage/Navbar";
 
 import Home from "../pages/Home";
@@ -9,14 +9,11 @@ import Footer from "./Footer";
 
 import { motion, useScroll } from "motion/react";
 
-import { Theme } from "./themecontext/ThemeContext";
 import CustomCurser from "./CustomCurserAnimation/CustomCurser";
+import RevealSection from "./animations/RevealSection";
 
 const PortfolioPage = () => {
   const { scrollYProgress } = useScroll();
-
-  const [theme] = useContext(Theme);
-  const isDark = theme === "Dark";
 
   return (
     <div>
@@ -28,14 +25,14 @@ const PortfolioPage = () => {
       />
 
       {/* Transparent while near the top */}
-      <Navbar transparent={scrollYProgress.get() < 0.01} />
+      <Navbar />
 
-      <main className="pt-29">
+      <main className="pt-24">
         <Home />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
+        <RevealSection><About /></RevealSection>
+        <RevealSection><Projects /></RevealSection>
+        <RevealSection><Contact /></RevealSection>
+        <RevealSection><Footer /></RevealSection>
       </main>
     </div>
   );

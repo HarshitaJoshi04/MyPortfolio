@@ -1,5 +1,6 @@
 import { Mesh, Program, Renderer, Triangle, Vec3 } from "ogl";
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "motion/react";
 import "./Orb.css";
 
 export default function Orb({
@@ -14,6 +15,7 @@ export default function Orb({
 })
 {
   const ctnDom = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const vert = /* glsl */ `
     precision highp float;
@@ -293,7 +295,7 @@ baseColor3: { value: hexToVec3(baseColor3) },
           const handleVisibility = () => {
         if (document.hidden) {
           cancelAnimationFrame(rafId);
-        } else {
+        } else if (!shouldReduceMotion) {
           lastTime = performance.now();
           rafId = requestAnimationFrame(update);
         }
@@ -327,7 +329,11 @@ program.uniforms.baseColor3.value = base3Vec;
 
       renderer.render({ scene: mesh });
     };
-    rafId = requestAnimationFrame(update);
+    if (shouldReduceMotion) {
+      renderer.render({ scene: mesh });
+    } else {
+      rafId = requestAnimationFrame(update);
+    }
     
       document.addEventListener("visibilitychange", handleVisibility);
 
@@ -350,7 +356,8 @@ program.uniforms.baseColor3.value = base3Vec;
   backgroundColor,
   baseColor1,
   baseColor2,
-  baseColor3
+  baseColor3,
+  shouldReduceMotion,
 ]);
 
   return <div ref={ctnDom} className="orb-container" />;

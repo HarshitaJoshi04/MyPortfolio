@@ -10,9 +10,7 @@ const Projects = () => {
   return (
     <div
       className={`relative min-h-screen overflow-hidden py-20 lg:py-28 ${
-        isDark
-          ? "bg-[#050816][0]"
-          : ""
+        isDark ? "bg-transparent" : ""
       }`}
     >
       {!isDark && (

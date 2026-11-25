@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import Orb from "../components/landingPage/Orb";
 import avatar from "../assets/avatr.jpeg";
 import HeroText from "../components/landingPage/HeroText";
@@ -9,6 +10,7 @@ import H1 from "../components/headingAnimation/H1";
 const Home = () => {
   const [theme] = useContext(Theme);
   const isDark = theme === "Dark";
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -75,7 +77,12 @@ const Home = () => {
 
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
             {/* Left */}
-            <div className="text-center lg:text-left">
+            <motion.div
+              className="text-center lg:text-left"
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -34 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: shouldReduceMotion ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
+            >
               <HeroText />
 
               <h1
@@ -86,7 +93,7 @@ const Home = () => {
                 Building
               </h1>
 
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px] leading-none italic font-light bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <h1 className="hero-gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px] leading-none italic font-light bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 products.
               </h1>
 
@@ -142,19 +149,24 @@ const Home = () => {
               <div className="mt-10 flex justify-center lg:justify-start">
                 <Icons />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right */}
-            <div className="relative flex flex-col items-center mt-4 lg:mt-0">
+            <motion.div
+              className="relative flex flex-col items-center mt-4 lg:mt-0"
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 34, scale: 0.96 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.9, delay: shouldReduceMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
+            >
               {/* Decorative Rings - hidden on very small screens to avoid clipping */}
               <div
-                className={`hidden xs:block absolute w-64 h-64 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] rounded-full border ${
+                  className={`avatar-ring-one hidden xs:block absolute w-64 h-64 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] rounded-full border ${
                   isDark ? "border-white/10" : "border-blue-300/40"
                 } animate-pulse`}
               />
 
               <div
-                className={`hidden xs:block absolute w-72 h-72 sm:w-[430px] sm:h-[430px] lg:w-[560px] lg:h-[560px] rounded-full border ${
+                  className={`avatar-ring-two hidden xs:block absolute w-72 h-72 sm:w-[430px] sm:h-[430px] lg:w-[560px] lg:h-[560px] rounded-full border ${
                   isDark ? "border-blue-500/10" : "border-blue-400/30"
                 }`}
               />
@@ -171,10 +183,12 @@ const Home = () => {
                   baseColor3="#10359b"
                 />
 
-                <img
+                <motion.img
                   src={avatar}
                   alt="Profile"
                   className="absolute inset-0 m-auto w-32 h-32 xs:w-40 xs:h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white/20 shadow-[0_0_80px_rgba(59,130,246,.45)]"
+                  animate={shouldReduceMotion ? undefined : { y: [0, -9, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
                 />
 
                 {/* Floating Cards - absolute on lg+, hidden below that to avoid overlap on small screens */}
@@ -235,7 +249,7 @@ const Home = () => {
                   <p className="font-semibold text-sm">AI Web Apps</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

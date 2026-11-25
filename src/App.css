@@ -1,0 +1,96 @@
+/* Motion polish for interactive project cards. */
+.project-card {
+  isolation: isolate;
+  transform-style: preserve-3d;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), transparent 42%, rgba(99, 102, 241, 0.12));
+  transition: opacity 500ms ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card-glow {
+  z-index: 0;
+  background: linear-gradient(120deg, transparent 15%, rgba(34, 211, 238, 0.22), transparent 75%);
+  transform: translateX(-110%);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease;
+}
+
+.project-card:hover .project-card-glow {
+  transform: translateX(110%);
+}
+
+.intro-screen {
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(28, 72, 147, 0.24), transparent 43%),
+    radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.12), transparent 48%),
+    #03040a;
+}
+
+.intro-aura {
+  position: absolute;
+  width: min(82vw, 780px);
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  translate: -50% -50%;
+}
+
+.intro-aura-one {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.28), rgba(14, 165, 233, 0.08) 42%, transparent 70%);
+}
+
+.intro-aura-two {
+  width: min(60vw, 560px);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.22), rgba(34, 211, 238, 0.06) 48%, transparent 72%);
+}
+
+.avatar-ring-one {
+  animation: avatar-orbit 26s linear infinite;
+}
+
+.avatar-ring-two {
+  animation: avatar-orbit 34s linear infinite reverse;
+}
+
+@keyframes avatar-orbit {
+  to { transform: rotate(360deg); }
+}
+
+.intro-eyebrow {
+  box-shadow: 0 0 34px rgba(34, 211, 238, 0.1), inset 0 0 18px rgba(255, 255, 255, 0.025);
+}
+
+.hero-gradient-text {
+  background-size: 200% auto;
+  animation: gradient-drift 7s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-drift {
+  from { background-position: 0% center; }
+  to { background-position: 100% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

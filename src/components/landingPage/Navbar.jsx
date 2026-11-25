@@ -9,7 +9,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Navbar = ({ open, onClose,transparent = false }) => {
+const Navbar = () => {
   const scrollTo = (id) => {
     gsap.to(window, {
       scrollTo: `#${id}`,
@@ -24,23 +24,21 @@ const Navbar = ({ open, onClose,transparent = false }) => {
 
   const [scrolled, setScrolled] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > window.innerHeight - 100);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
      <nav
-  className={`fixed top-5 right-5 w-auto flex gap-4 rounded-2xl px-4 py-3 z-50 ${
+  className={`fixed top-4 left-1/2 -translate-x-1/2 w-max max-w-[calc(100vw-2rem)] flex gap-3 rounded-full px-3 py-2 z-50 shadow-lg transition-all duration-300 ${
     isDark
       ? "bg-slate-950/70 backdrop-blur-xl border border-white/10"
       : "bg-white/80 backdrop-blur-xl border border-slate-200"
-  }`}
+  } ${scrolled ? "shadow-xl" : ""}`}
 >
           <div className="hidden md:block">
           <NavLinks />
@@ -50,6 +48,7 @@ useEffect(() => {
 
         <div className="md:hidden flex items-center">
           <button 
+            aria-label="Open navigation menu"
             onClick={() => setIsOpen(true)}
             className={`p-2 rounded-lg transition-colors ${
               isDark ? "hover:bg-slate-900 text-slate-100" : "hover:bg-slate-100 text-slate-800"
@@ -79,6 +78,7 @@ useEffect(() => {
         <div className="flex items-center justify-between mt-2 mb-4">
           <span className="font-semibold text-lg">Menu</span>
           <button
+            aria-label="Close navigation menu"
             onClick={() => setIsOpen(false)}
             className={`p-2 rounded-full transition-colors ${
               isDark ? "hover:bg-slate-900 text-slate-300" : "hover:bg-slate-100 text-slate-600"
