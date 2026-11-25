@@ -13,11 +13,11 @@ import {
 import { FiExternalLink } from "react-icons/fi";
 
 import invoice from "../../assets/ai-invoice.png";
-import logistics from "../../assets/ai-logistics.png";
+import playroom from "../../assets/playroom.png";
 import codeSense from "../../assets/codeSense.png";
 
 import invoiceVideo from "../../assets/invoice.mp4";
-import logisticsVideo from "../../assets/ai-logistics.mp4";
+import playroomVideo from "../../assets/playroom.mp4";
 import codeSenseVideo from "../../assets/codeSense.mp4";
 
 import "swiper/css";
@@ -45,22 +45,22 @@ const projects = [
     live: "https://code-sense-ai-green.vercel.app/",
   },
 
-  {
-    title: "AI Logistics Agent",
-    image: logistics,
-    video: logisticsVideo,
-    description:
-      "AI-powered logistics application that monitors vehicle exceptions and uses automated workflows and AI-based analysis to process operational events.",
-    tech: [
-      "React",
-      "Express",
-      "Node.js",
-      "MongoDB",
-      "AI",
-      "n8n",
-    ],
-    live: "https://ai-logistics-agent-beige.vercel.app/",
-  },
+{
+  title: "Voice Word Party – playRoom",
+  image: playroom,
+  video: playroomVideo,
+  description:
+    "Interactive multiplayer word game enabling players to connect, communicate, and enjoy real-time word challenges using Socket.IO.",
+  tech: [
+    "React.js",
+    "Node.js",
+    "Vite",
+    "Socket.IO",
+    "Capacitor",
+    "Android"
+  ],
+  live: "https://playroom-peach.vercel.app/",
+},
 
   {
     title: "AI Invoice Intelligence & Automation",
